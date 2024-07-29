@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { getPda, program, todoState, ProgramID } from "../../anchor/setup";
 import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 import { PublicKey, SystemProgram } from "@solana/web3.js";
+import Typewriter from "typewriter-effect";
+
 
 function TodosCount() {
   const { connection } = useConnection();
@@ -41,9 +43,18 @@ function TodosCount() {
   }, [connection, publicKey, program]);
 
   return (
-    <div className="flex flex-col">
-      <p>the count is {count}</p>
-      {pda}
+    <div className="flex flex-col bg-black/30 p-3 rounded-xl text-lg">
+      <p className="font-bold">the count is {''} {''} <span className="text-xl">{count}</span></p>
+       <p className=""> Adrress: {" "} {" "} {pda?.slice(0, 5)}... {pda?.slice(35)}</p>
+       <span className="cursor-pointer text-purple-600 ml-3 text-end font-bold">
+                    <Typewriter
+                      options={{
+                        strings: "@defi_prince",
+                        autoStart: true,
+                        loop: true,
+                      }}
+                    />
+                  </span>
     </div>
   );
 }

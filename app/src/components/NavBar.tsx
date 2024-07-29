@@ -5,8 +5,10 @@ import SolanaLogo from "../../public/solanaLogo.svg";
 
 export function NavBar() {
   return (
-    <div className="flex justify-around items-center border border-black  p-5">
-      <Image src={SolanaLogo} alt="Solana Logo" width={350} height={350} />
+    <div className="flex justify-around bg-[#050816] items-center border border-black m-auto  p-5">
+      <div className="hidden md:block">
+      <Image src={SolanaLogo} alt="Solana Logo" width={200} height={200} />
+      </div>
       <WalletMultiButton />
     </div>
   );

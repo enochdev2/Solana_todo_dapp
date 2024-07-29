@@ -1,6 +1,13 @@
-@tailwind base;
+  @tailwind base;
   @tailwind components;
   @tailwind utilities;
+
+
+  body {
+    background-color: #1f1e1e;
+    color: white;
+    /* overflow: hidden; */
+  }
 
   @layer base {
     :root {
@@ -71,6 +78,8 @@
       @apply border-border;
     }
     body {
-      @apply bg-background text-foreground;
+      @apply bg-[#100d25] ;
     }
   }
+
+  

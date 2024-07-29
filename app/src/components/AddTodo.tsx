@@ -10,7 +10,7 @@ export default function AddTodo() {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
 
-  const addTodo = async () => {
+  const addTodo = async () => { 
     try {
       if (!connection) return;
 
@@ -31,16 +31,16 @@ export default function AddTodo() {
   };
 
   return (
-    <div className="border border-black flex p-5 gap-2">
+    <div className=" flex p-5 my-8 mb-4 gap-2 bg-black/40 rounded-xl" >
       <Input
         type="text"
         placeholder="Add a new todo..."
-        className="flex-1 rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors"
+        className="flex-1 rounded-md border border-input bg-transparent px-3 py-6 text-base shadow-sm transition-colors"
         onChange={(e: any) => setInput(e.target.value)}
       />
       <Button
         type="submit"
-        className="inline-flex h-10 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+        className="inline-flex h-14 items-center justify-center rounded-md bg-gradient-to-bl from-[#05415f] to-[#082e08] w-[30%] px-4 py-2 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
         onClick={addTodo}
       >
         Add Todo
